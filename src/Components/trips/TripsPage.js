@@ -16,7 +16,7 @@ class TripsPage extends React.Component
         };
 
     }
-
+ 
     openModal(event)
     {
         if (this && this.setState)
