@@ -11,5 +11,8 @@ pids
 logs
 results
 build
-
+.DS_Store
+thumbs.db
+*.log
+node_modules/
 node_modules
