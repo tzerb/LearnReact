@@ -5,7 +5,7 @@ import SelectInput from '../common/SelectInput';
 const TripForm = ({trip, onSave, onChange, saving, errors}) => {
   return (
     <form>
-      <h1>Manage Course</h1>
+      <h1>Manage Trip</h1>
       <TextInput
         name="title"
         label="Title"

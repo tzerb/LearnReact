@@ -7,9 +7,6 @@ import TripList from './TripList';
 class TripPage extends React.Component {
     constructor(props, context)    {
         super(props, context);
-
- 
- 
     }
 
     render() {

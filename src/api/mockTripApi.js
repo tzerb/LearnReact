@@ -26,6 +26,15 @@ const generateId = (trip) => {
 };
 
 class TripApi {
+  static saveTrip(trip)
+  {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Object.assign([], trip));
+      }, delay);
+    });
+  }
+
   static getAllTrips() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -43,7 +52,6 @@ class TripApi {
         if (trip.title.length < minTripTitleLength) {
           reject(`Title must be at least ${minTripTitleLength} characters.`);
         }
-
         if (trip.id) {
           const existingTripIndex = trips.findIndex(a => a.id == trip.id);
           trips.splice(existingTripIndex, 1, trip);

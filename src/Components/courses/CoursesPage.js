@@ -31,8 +31,8 @@ class CoursePage extends React.Component {
 }
 
 CoursePage.propTypes = {
-    courses: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequried
+    actions: PropTypes.object.isRequried,
+    courses: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps)
@@ -44,7 +44,6 @@ function mapStateToProps(state, ownProps)
 
 function mapDispatchToProps(dispatch) {
     return {
-        // createCourse: course => dispatch(courseActions.createCourse(course))
         actions: bindActionCreators(courseActions, dispatch)
     };
 }

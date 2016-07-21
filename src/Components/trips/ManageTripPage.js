@@ -49,14 +49,15 @@ export class ManageTripPage extends React.Component {
 
   saveTrip(event) {
     event.preventDefault();
-
     if (!this.tripFormIsValid()) {
       return;
     }
 
     this.setState({saving: true});
     this.props.actions.saveTrip(this.state.trip)
-      .then(() => this.redirect())
+      .then(() => { 
+        this.redirect() 
+      })
       .catch(error => {
         toastr.error(error);
         this.setState({saving: false});
