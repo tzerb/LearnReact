@@ -15,13 +15,13 @@ export class ManageTripPage extends React.Component {
       errors: {},
       saving: false
     };
-
+ 
     this.saveTrip = this.saveTrip.bind(this);
     this.updateTripState = this.updateTripState.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.trip.id != nextProps.trip.id) {
+    if (this.props.trip.tripId != nextProps.trip.tripId) {
       // Necessary to populate form when existing trip is loaded directly.
       this.setState({trip: Object.assign({}, nextProps.trip)});
     }
@@ -56,7 +56,7 @@ export class ManageTripPage extends React.Component {
     this.setState({saving: true});
     this.props.actions.saveTrip(this.state.trip)
       .then(() => { 
-        this.redirect() 
+        this.redirect();
       })
       .catch(error => {
         toastr.error(error);
@@ -93,8 +93,8 @@ ManageTripPage.contextTypes = {
   router: PropTypes.object
 };
 
-function getTripById(trips, id) {
-  const trip = trips.filter(trip => trip.id == id);
+function getTripById(trips, tripId) {
+  const trip = trips.filter(trip => trip.tripId == tripId);
   if (trip) return trip[0]; //since filter returns an array, have to grab the first.
   return null;
 }

@@ -36,7 +36,7 @@ export function saveTrip(trip) {
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return TripApi.saveTrip(trip).then(trip => {
-        if (trip.id)
+        if (trip.tripId)
         {
             dispatch(updateTripSuccess(trip));
         }
@@ -44,7 +44,6 @@ export function saveTrip(trip) {
         {
             dispatch(createTripSuccess(trip))
         }
-      // trip.id ?  : ;
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);

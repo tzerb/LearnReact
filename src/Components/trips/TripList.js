@@ -12,7 +12,7 @@ const TripList = ({trips}) => {
       </thead>
       <tbody>
       {trips.map(trip =>
-        <TripListRow key={trip.id} trip={trip}/>
+        <TripListRow key={trip.tripId} trip={trip}/>
       )}
       </tbody>
     </table>

@@ -14,9 +14,8 @@ export default function tripReducer(state = initialState.trips, action) {
         ];
 
         case types.UPDATE_TRIP_SUCCESS:
-        debugger;
         return [
-            ...state.filter(trip => trip.id !== action.trip.id),
+            ...state.filter(trip => trip.tripId !== action.trip.tripId),
             Object.assign({}, action.trip)
         ];
 
