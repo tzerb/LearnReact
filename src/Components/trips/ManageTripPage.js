@@ -5,6 +5,7 @@ import * as tripActions from '../../actions/tripActions';
 import TripForm from './TripForm';
 import {authorsFormattedForDropdown} from '../../selectors/selectors';
 import toastr from 'toastr';
+import moment from 'moment';
 
 export class ManageTripPage extends React.Component {
   constructor(props, context) {
@@ -34,12 +35,29 @@ export class ManageTripPage extends React.Component {
     return this.setState({trip: trip});
   }
 
+  // TODO TZ why isn't moment working?!?
+  isValidDate(dateInput)
+  {
+    // alert(dateInput);
+    return true;
+  }
+
   tripFormIsValid() {
     let formIsValid = true;
     let errors = {};
 
     if (this.state.trip.title.length < 5) {
       errors.title = 'Title must be at least 5 characters.';
+      formIsValid = false;
+    }
+
+    if (this.state.trip.description.length < 5) {
+      errors.description = 'Description must be at least 5 characters.';
+      formIsValid = false;
+    }
+
+    if (!this.isValidDate(this.state.trip.dateTime)) {
+      errors.dateTime = 'DateTime must be a valid date.';
       formIsValid = false;
     }
 

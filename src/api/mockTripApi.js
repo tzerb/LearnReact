@@ -78,14 +78,14 @@ const generateId = (trip) => {
 };
 
 class TripApi {
-  static saveTrip(trip)
-  {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Object.assign([], trip));
-      }, delay);
-    });
-  }
+  // static saveTrip(trip)
+  // {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve(Object.assign([], trip));
+  //     }, delay);
+  //   });
+  // }
 
   static getAllTrips() {
     return new Promise((resolve, reject) => {

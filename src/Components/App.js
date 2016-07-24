@@ -20,7 +20,7 @@ class App extends React.Component{
         // });
 //https://api.github.com/users/tzerb
 
-        var request = $.ajax({
+        let request = $.ajax({
             url: "http://localhost:15989/api/Values",
             method: "GET",
             dataType: "json",
